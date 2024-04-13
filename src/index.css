@@ -24,6 +24,6 @@
         @apply transition duration-100  bg-blue-400 text-white  hover:bg-blue-600 hover:scale-110
     }
     .btn-seconday{
-        @apply transition duration-100  bg-green-400 text-white  hover:bg-green-600 hover:scale-110
+        @apply transition duration-100  bg-red-400 text-white  hover:bg-red-600 hover:scale-110
     }
 }
