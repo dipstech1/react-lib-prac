@@ -8,8 +8,10 @@
     input[type='text'], input[type='password'] {
         @apply  border-2 border-gray-400 rounded-md w-full h-14 outline-none p-1 placeholder:text-slate-400 disabled:bg-gray-200 disabled:placeholder:text-white focus:ring-1 ring-blue-500
     }
-
-
+    input[type="checkbox"], input[type="radio"] {
+        @apply w-5 h-5 accent-blue-500 m-3
+      }
+   
     a{
         @apply underline underline-offset-1 text-blue-500 hover:text-violet-600
     }
@@ -19,21 +21,27 @@
     h2{
         @apply  text-gray-800 font-bold text-2xl 
     }
-    h3{
-        @apply  text-gray-800 font-bold text-lg 
+    h3,label{
+        @apply  text-gray-700 font-medium text-base 
+    }
+    select{
+        @apply  border-none  rounded-md w-fit  outline-none p-2 focus:ring-1 ring-blue-500 font-bold text-lg text-white bg-blue-400 
+    }
+    option{
+        @apply w-fit shadow-lg  outline-none p-2 focus:ring-1 ring-blue-500 font-medium text-base text-blue-500 bg-white  hover:border-blue-500 hover:text-blue-500  hover:bg-blue-100  
     }
 }
 
 @layer components{
     .btn{
-        @apply border shadow-sm px-5 py-2 rounded-md
+        @apply border shadow-sm px-5 py-2 rounded-md font-bold 
     }
 
     .btn-primary{
-        @apply transition duration-100  bg-blue-400 text-white  hover:bg-blue-600 hover:scale-110
+        @apply transition duration-100  bg-blue-400 text-white hover:scale-110 hover:border-2 hover:border-blue-500 hover:text-blue-500 hover:bg-white
     }
     .btn-seconday{
-        @apply transition duration-100  bg-red-400 text-white  hover:bg-red-600 hover:scale-110
+        @apply transition duration-100  bg-green-400 text-white hover:scale-110 hover:border-2 hover:border-green-500 hover:text-green-500 hover:bg-white
     }
     .flex-center
     {
