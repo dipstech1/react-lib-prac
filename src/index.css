@@ -13,6 +13,15 @@
     a{
         @apply underline underline-offset-1 text-blue-500 hover:text-violet-600
     }
+    h1{
+        @apply  text-gray-700 font-bold text-4xl 
+    }
+    h2{
+        @apply  text-gray-800 font-bold text-2xl 
+    }
+    h3{
+        @apply  text-gray-800 font-bold text-lg 
+    }
 }
 
 @layer components{
@@ -25,5 +34,9 @@
     }
     .btn-seconday{
         @apply transition duration-100  bg-red-400 text-white  hover:bg-red-600 hover:scale-110
+    }
+    .flex-center
+    {
+        @apply flex justify-center items-center flex-wrap
     }
 }
