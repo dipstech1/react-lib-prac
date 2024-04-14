@@ -13,11 +13,11 @@ interface ISelectProps extends HTMLProps<HTMLSelectElement> {
 export const Select = (props: ISelectProps) => {
     return (
         <div>
-            <select name="cars" id="cars" onChange={props.onChange}>
+            <select name="cars" id="cars" onChange={props.onChange} value={props.value}>
                 <option value={''}>Select</option>
                 {
                     props.selectList?.map((data,ind) => (
-                        <option key={ind} value={data?.value} selected = {props.value === data?.value}> {data?.label}</option>
+                        <option key={ind} value={data?.value} > {data?.label}</option>
                     ))
                 }
             </select>
