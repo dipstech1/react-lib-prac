@@ -2,6 +2,7 @@
 import { Button } from '@ui/Button'
 import { Textbox } from '@ui/Textbox'
 import { Radio } from '@ui/Radio'
+import {Checkbox} from '@ui/Checkbox'
 import { Select } from '@ui/Select'
 
 function App() {
@@ -14,9 +15,9 @@ function App() {
   return (
     <>
       <Button label='Register' type='button' />
-      <label> checkbox</label> 
-      <input  type='checkbox'/>
       <Radio name='gender' id='male' value={'Male'} label='Male'/>
+      <Checkbox name='gender' id='male' value={'checkbox'} label='checkbox'/>
+
       {/* <input type='text' placeholder='name'/> */}
       <Textbox placeholder='email'/>
       

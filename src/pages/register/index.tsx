@@ -15,6 +15,10 @@ export const Register = () => {
         <label htmlFor="password">password</label>
         <input placeholder="password" id="password" type="password" />
       </div>
+      <div>
+        <label htmlFor="conformPassword">Conform password</label>
+        <input placeholder="Conform Password" id="conformPassword" type="password" min="3"/>
+      </div>
 
       <div>
         <button disabled>Submit</button>

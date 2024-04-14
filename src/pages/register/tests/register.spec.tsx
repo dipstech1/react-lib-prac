@@ -12,10 +12,10 @@ describe("Register screen", () => {
             expect(header).toBeInTheDocument()
         });
 
-        it("should render 2 input fields" , ()=>{
+        it("should render 4 input fields" , ()=>{
             let registerComp = render(<Register />);
             const inputs =  registerComp.container.querySelectorAll("input");
-            expect(inputs).toHaveLength(3)
+            expect(inputs).toHaveLength(4)
         });
 
         it("should have username input label", ()=>{
@@ -42,6 +42,25 @@ describe("Register screen", () => {
             const passwordInp =  screen.getByPlaceholderText("password"); 
             expect(passwordInp).toHaveAttribute("type", "password")
         });
+
+        it("Should have confrom Password label",()=>{
+            render(<Register/>)
+            const conformPasswordLabel = screen.getByLabelText("Conform password");
+            expect(conformPasswordLabel).toBeInTheDocument();
+        });
+
+        it("Confrom password field shoud have type password", ()=>{
+            render(<Register/>);
+            const conformPasswordInp = screen.getByPlaceholderText("Conform Password");
+            expect(conformPasswordInp).toHaveAttribute("type","password")
+        })
+        it("Confrom password field shoud have minimum value 3", ()=>{
+            render(<Register/>);
+            const conformPasswordInp = screen.getByPlaceholderText("Conform Password");
+            expect(conformPasswordInp).toHaveAttribute("min")
+            expect(conformPasswordInp.getAttribute('min')).toBe('3');
+
+        })
 
         it("should render a button with disable state", ()=>{
             render(<Register/>);
