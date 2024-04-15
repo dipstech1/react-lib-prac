@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
+import {userEvent} from "@testing-library/user-event"
 
 import { Register } from '../../register';
 
@@ -45,18 +46,18 @@ describe("Register screen", () => {
 
         it("Should have confrom Password label",()=>{
             render(<Register/>)
-            const conformPasswordLabel = screen.getByLabelText("Conform password");
+            const conformPasswordLabel = screen.getByLabelText("Confirm Password");
             expect(conformPasswordLabel).toBeInTheDocument();
         });
 
         it("Confrom password field shoud have type password", ()=>{
             render(<Register/>);
-            const conformPasswordInp = screen.getByPlaceholderText("Conform Password");
+            const conformPasswordInp = screen.getByPlaceholderText("confirmpassword");
             expect(conformPasswordInp).toHaveAttribute("type","password")
         })
         it("Confrom password field shoud have minimum value 3", ()=>{
             render(<Register/>);
-            const conformPasswordInp = screen.getByPlaceholderText("Conform Password");
+            const conformPasswordInp = screen.getByPlaceholderText("confirmpassword");
             expect(conformPasswordInp).toHaveAttribute("min")
             expect(conformPasswordInp.getAttribute('min')).toBe('3');
 
@@ -66,6 +67,19 @@ describe("Register screen", () => {
             render(<Register/>);
             const btn = screen.getByRole("button",{name:"Submit"});
             expect(btn).toBeDisabled()
+        })
+    })
+
+    describe("Form interaction", ()=>{
+        it("check if both password matched", ()=> {
+            render(<Register/>);
+            const password = screen.getByPlaceholderText("password");
+            const confirmpassword = screen.getByPlaceholderText("confirmpassword");
+            userEvent.type(password, "Password@123");
+            userEvent.type(confirmpassword,"Password@123");
+            // const btn = screen.getByRole("button",{name:"Submit"});
+            const isSamePassword = password.getAttribute('value') == confirmpassword.getAttribute("value")
+            expect(isSamePassword).toBeTruthy()
         })
     })
 
