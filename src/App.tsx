@@ -4,6 +4,8 @@ import { Textbox } from '@ui/Textbox'
 import { Radio } from '@ui/Radio'
 import {Checkbox} from '@ui/Checkbox'
 import { Select } from '@ui/Select'
+import {Routes, Route } from 'react-router-dom'
+import { Register } from './pages/register'
 
 function App() {
 
@@ -14,14 +16,10 @@ function App() {
 
   return (
     <>
-      <Button label='Register' type='button' />
-      <Radio name='gender' id='male' value={'Male'} label='Male'/>
-      <Checkbox name='gender' id='male' value={'checkbox'} label='checkbox'/>
-
-      {/* <input type='text' placeholder='name'/> */}
-      <Textbox placeholder='email'/>
       
-      <Select selectList={[{label:'Volvo', value:'Volvo'},{label:'BMW', value:'BMW'}]} onChange={chg} value={'BMW'}/>
+      <Routes>
+        <Route path="/register" element={<Register/>}/>
+      </Routes>
 
 
     </>

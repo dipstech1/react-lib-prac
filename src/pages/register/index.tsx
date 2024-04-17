@@ -1,28 +1,19 @@
-
+import { Textbox } from "@/shared/ui/Textbox"
+import { Button } from "@/shared/ui/Button"
 export const Register = () => {
+  
   return (
-    <div>
+    <div className="flex-center"> 
+    <div className="w-1/2 h-[100%]">
       <h1>Register</h1>
+      <Textbox label="User Name"  type="text" placeholder="User Name"/>
+      <Textbox label="Email"  type="email" placeholder="Email"/>
+      <Textbox label="Password"  type="password" placeholder="Password"/>
+      <Textbox label="Conform Password"  type="password" placeholder="Conform Password"/>
       <div>
-        <label htmlFor="username">User Name</label>
-        <input placeholder="name" id="username"/>
+        <Button type="submit" label="Submit" btnType="primary"/>
       </div>
-      <div>
-        <label htmlFor="Email">Email</label>
-        <input placeholder="email" id="Email" />
-      </div>
-      <div>
-        <label htmlFor="password">password</label>
-        <input placeholder="password" id="password" type="password" />
-      </div>
-      <div>
-        <label htmlFor="conformPassword">Conform password</label>
-        <input placeholder="Conform Password" id="conformPassword" type="password" min="3"/>
-      </div>
-
-      <div>
-        <button disabled>Submit</button>
-      </div>
+    </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@
 @layer base {
 
 
-    input[type='text'], input[type='password'] {
+    input[type='text'], input[type='password'] ,input[type='email']{
         @apply  border-2 border-gray-400 rounded-md w-full h-14 outline-none p-1 placeholder:text-slate-400 disabled:bg-gray-200 disabled:placeholder:text-white focus:ring-1 ring-blue-500
     }
     input[type="checkbox"], input[type="radio"] {
